@@ -8,7 +8,21 @@ export default {
       lg: '1020px',
       xl: '1440px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        black: '#000000',
+        yellow: '#ffdc26',
+        green: '#00de91',
+        gray: '#979797',
+        lightGray: '#fafafa',
+        white: '#ffffff',
+        blue: '#1cadff',
+        error: '#c53636',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

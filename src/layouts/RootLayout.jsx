@@ -1,17 +1,17 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const RootLayout = () => {
   return (
     <>
-      <nav className="container mx-auto bg-slate-200">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="about">About</NavLink>
-        <NavLink to="contact">Contact</NavLink>
-      </nav>
+      <Nav />
 
       <main>
         <Outlet />
       </main>
+
+      <Footer />
     </>
   );
 };
