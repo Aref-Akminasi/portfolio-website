@@ -8,7 +8,7 @@ const Welcome = () => {
     <section className="bg-lightGray">
       <Container className="flex flex-col lg:flex-row justify-between px-16 pt-16 lg:pt-0 items-center space-y-32 md:space-y-0">
         <div className="flex flex-col space-y-8 max-w-lg">
-          <SectionTitle title={'Welcome'} />
+          <SectionTitle>Welcome</SectionTitle>
           <h2 className="leading-normal md:leading-normal font-bold text-green text-5xl md:text-6xl ">
             <span className="text-black">Hey, I'm </span> <br />
             Aref Akminasi
