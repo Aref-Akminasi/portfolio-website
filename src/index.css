@@ -6,14 +6,15 @@
   border-bottom: 2px solid black;
 }
 
-.social-media-icon {
+.social-media-icon,
+.skill {
   cursor: pointer;
   transition: filter 300ms;
-  filter: invert(67%) sepia(0%) saturate(0%) hue-rotate(227deg) brightness(100%)
-    contrast(80%);
+  filter: grayscale(100%);
 }
 
-.social-media-icon:hover {
+.social-media-icon:hover,
+.skill:hover {
   filter: none;
 }
 
