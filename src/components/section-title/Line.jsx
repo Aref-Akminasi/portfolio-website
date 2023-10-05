@@ -1,7 +1,7 @@
 const Line = () => {
   return (
     <svg
-      width="32"
+      width="24"
       height="1"
       viewBox="0 0 32 1"
       fill="none"

@@ -11,17 +11,26 @@ const Nav = () => {
 
         <ul className="space-x-12 md:space-x-16">
           <li className="inline-block">
-            <NavLink to="portfolio" className="font-bold text-base md:text-lg">
+            <NavLink
+              to="portfolio"
+              className="font-bold text-base md:text-lg transition-colors hover:text-gray duration-300"
+            >
               Portfolio
             </NavLink>
           </li>
           <li className="inline-block">
-            <NavLink to="about" className="font-bold text-base md:text-lg">
+            <NavLink
+              to="about"
+              className="font-bold text-base md:text-lg transition-colors hover:text-gray duration-300"
+            >
               About
             </NavLink>
           </li>
           <li className="inline-block">
-            <NavLink to="contact" className="font-bold text-base md:text-lg">
+            <NavLink
+              to="contact"
+              className="font-bold text-base md:text-lg  transition-colors hover:text-gray duration-300"
+            >
               Contact
             </NavLink>
           </li>
