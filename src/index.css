@@ -16,3 +16,24 @@
 .social-media-icon:hover {
   filter: none;
 }
+
+.placeholder {
+  background-image: linear-gradient(
+    to right,
+    #d0d1d3 0%,
+    #c6c7c9 10%,
+    #d0d1d3 20%,
+    #d0d1d3 100%
+  );
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: -150% 0%;
+  }
+}
