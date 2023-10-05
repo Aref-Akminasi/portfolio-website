@@ -4,9 +4,9 @@ import AboutMeCard from './AboutMeCard';
 
 const AboutMe = () => {
   return (
-    <Container className="p-16 mt-40 flex flex-col space-y-16">
+    <Container className="p-4 lg:p-8 mt-40 flex flex-col space-y-16">
       <SectionTitle>About Me</SectionTitle>
-      <div className="flex flex-col justify-between items-center lg:flex-row lg:space-x-8 space-y-16 lg:space-y-0 lg:items-stretch">
+      <div className="flex flex-col space-x-0 space-y-16 items-center lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0 lg:justify-center">
         <AboutMeCard
           icon={
             <svg
