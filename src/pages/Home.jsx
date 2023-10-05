@@ -1,11 +1,8 @@
+import Container from '../components/Container';
+import Welcome from '../components/welcome/Welcome';
+
 const Home = () => {
-  return (
-    <section className="container mx-auto">
-      <h1 className="text-xl font-bold md:text-3xl">
-        Hi there! My name is Aref and this is the home page
-      </h1>
-    </section>
-  );
+  return <Welcome />;
 };
 
 export default Home;

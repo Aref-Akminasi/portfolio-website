@@ -22,6 +22,9 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
+      height: {
+        165: '42rem',
+      },
     },
   },
   plugins: [],

@@ -7,7 +7,7 @@ import SocialMedia from './SocialMedia';
 
 const Footer = () => {
   return (
-    <footer className="bg-lightGray flex items-center py-32">
+    <footer className="bg-lightGray flex items-center py-32 mt-40">
       <Container className="flex flex-col lg:flex-row space-y-16 lg:justify-between lg:space-y-0 px-16">
         <Logo />
         {/* Nav Menu */}
