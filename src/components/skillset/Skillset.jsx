@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 const Skillset = () => {
   const [skills, setSkills] = useState([]);
+  const [loaded, setLoaded] = useState();
   useEffect(() => {
     client
       .fetch(
@@ -17,8 +18,12 @@ const Skillset = () => {
       })
       .catch((err) => {
         console.error('error occurred!', err);
-      }, []);
-  });
+      });
+  }, []);
+
+  const imgLoadHandler = () => {
+    setLoaded((prev) => prev + 1);
+  };
 
   return (
     <section className="bg-lightGray mt-40">
@@ -26,7 +31,7 @@ const Skillset = () => {
         <h2 className="font-bold text-center	text-2xl">
           My current skillset, more to acquire!
         </h2>
-        <div className="flex w-full justify-between flex-wrap items-stretch">
+        <div className="flex w-full justify-between flex-wrap items-stretch flex-col lg:flex-row space-y-4 lg:space-y-0">
           {skills.length > 0 ? (
             skills.map((skill) => (
               <div
@@ -37,6 +42,7 @@ const Skillset = () => {
                   src={skill.imageUrl}
                   alt={skill.title}
                   className="skill h-20"
+                  onLoad={imgLoadHandler}
                 />
                 <h4 className="text-base text-gray">{skill.title}</h4>
               </div>
