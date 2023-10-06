@@ -1,7 +1,7 @@
-import Container from '../components/Container';
 import Welcome from '../components/welcome/Welcome';
 import AboutMe from '../components/about-me/AboutMe';
 import Skillset from '../components/skillset/Skillset';
+import RecentProjects from '../components/recent-projects/RecentProjects';
 
 const Home = () => {
   return (
@@ -9,6 +9,7 @@ const Home = () => {
       <Welcome />
       <AboutMe />
       <Skillset />
+      <RecentProjects />
     </>
   );
 };
