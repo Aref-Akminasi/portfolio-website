@@ -1,5 +1,6 @@
 import ButtonPrimary from '../ButtonPrimary';
 import Tag from './Tag';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = ({ data }) => {
   return (
@@ -12,7 +13,9 @@ const ProjectCard = ({ data }) => {
               return <Tag key={tag}>{tag}</Tag>;
             })}
           </div>
-          <h3 className="font-bold text-2xl md:text-3xl">{data.title}</h3>
+          <Link className="font-bold text-2xl md:text-3xl" to="/">
+            {data.title}
+          </Link>
           <p className="text-sm md:text-base">{data.header}</p>
         </div>
         <div className="flex justify-end">

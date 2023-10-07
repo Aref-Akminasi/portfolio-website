@@ -15,7 +15,6 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import NotFound from './pages/NotFound';
 
-/* To do: custom error page */
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
