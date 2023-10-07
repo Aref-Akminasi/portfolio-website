@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Container from '../components/Container';
 import client from '../hooks/SanityClient';
 import ProjectCard from '../components/project-card/ProjectCard';
+import ProjectsContainer from '../components/ProjectsContainer';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -40,12 +41,12 @@ const Portfolio = () => {
     <>
       <PortfolioHeader />
       <Container className="mt-40 flex flex-col space-y-16 p-8">
-        <div className="px-2 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16">
+        <ProjectsContainer>
           {projects.length > 0 &&
             projects.map((project, idx) => {
               return <ProjectCard data={projects[idx]} key={project.title} />;
             })}
-        </div>
+        </ProjectsContainer>
       </Container>
     </>
   );
