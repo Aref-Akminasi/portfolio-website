@@ -9,7 +9,7 @@ const Nav = () => {
       <Container className="py-4 px-4 flex flex-col md:flex-row justify-between items-center space-y-8">
         <Logo />
 
-        <ul className="space-x-12 md:space-x-16">
+        <ul className="space-x-8 md:space-x-16">
           <li className="inline-block">
             <NavLink
               to="portfolio"
