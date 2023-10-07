@@ -8,7 +8,7 @@ const RecentProjects = () => {
     <section>
       <Container className="mt-40 flex flex-col space-y-16 p-8">
         <SectionTitle>Recent projects</SectionTitle>
-        <div className="px-8 flex flex-col items-center space-y-16 lg:space-y-0 lg:flex-row lg:space-x-16 lg:items-stretch">
+        <div className="px-2 md:px-8 flex flex-col items-center space-y-16 lg:space-y-0 lg:flex-row lg:space-x-16 lg:items-stretch">
           <ProjectCard
             tags={['Tailwind', 'Sass', 'TypeScript']}
             heading={
