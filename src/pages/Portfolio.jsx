@@ -6,6 +6,11 @@ import ProjectCard from '../components/project-card/ProjectCard';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     let isMounted = true; // flag to check if component is still mounted
 
