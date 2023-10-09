@@ -91,17 +91,18 @@ const ProjectDetails = () => {
           <div className="w-full flex flex-col items-start space-y-6">
             <h1 className="font-semibold text-3xl md:text-4xl placeholder h-16 w-3/4 lg:w-1/3  rounded-full"></h1>
             <h2 className="font-light text-base md:text-xl text-gray placeholder h-8 w-1/2 lg:w-1/4 rounded-full"></h2>
+            <h2 className="font-light text-base md:text-xl text-gray placeholder h-8 w-1/2 lg:w-1/4 rounded-full"></h2>
           </div>
         </Container>
       </section>
 
       <section className="p-8 lg:p-16 bg-lightGray mt-40 flex flex-col space-y-16">
-        <Container className="flex flex-col lg:flex-row items-center p-4 lg:px-16 lg:items-start justify-between space-x-4 space-y-4 lg:space-y-0">
-          <div className="w-full lg:w-1/2 h-96 flex flex-col space-y-4 placeholder"></div>
+        <Container className="flex flex-col lg:flex-row items-center p-4 lg:px-16 lg:items-start justify-between space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+          <div className="w-full lg:w-full h-96 flex flex-col space-y-4 placeholder"></div>
           <div className="w-full lg:w-1/3 h-96 placeholder"></div>
         </Container>
-        <Container className="flex flex-col lg:flex-row items-center p-4 lg:px-16 lg:items-start justify-between space-x-4 space-y-4 lg:space-y-0">
-          <div className="w-full lg:w-1/2 h-96 flex flex-col space-y-4 placeholder"></div>
+        <Container className="flex flex-col lg:flex-row items-center p-4 lg:px-16 lg:items-start justify-between space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+          <div className="w-full lg:w-full h-96 flex flex-col space-y-4 placeholder"></div>
           <div className="w-full lg:w-1/3 h-96 placeholder"></div>
         </Container>
       </section>
