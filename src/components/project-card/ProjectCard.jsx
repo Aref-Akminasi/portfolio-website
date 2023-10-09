@@ -7,7 +7,7 @@ const ProjectCard = ({ data }) => {
     <div className="max-w-sm flex flex-col space-y-4">
       <img className="" src={data.image.asset.url} />
       <div className="flex flex-col space-y-4 h-full justify-between">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 items-start">
           <div className="flex flex-wrap content-start">
             {data.tags.map((tag) => {
               return <Tag key={tag}>{tag}</Tag>;
@@ -19,7 +19,10 @@ const ProjectCard = ({ data }) => {
           <p className="text-sm md:text-base">{data.header}</p>
         </div>
         <div className="flex justify-end">
-          <ButtonPrimary size={'text-base'} to="/">
+          <ButtonPrimary
+            size={'text-base'}
+            to={'/project/' + data.slug.current}
+          >
             Read more
           </ButtonPrimary>
         </div>

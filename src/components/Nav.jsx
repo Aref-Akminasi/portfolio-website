@@ -13,7 +13,7 @@ const Nav = () => {
           <li className="inline-block">
             <NavLink
               to="portfolio"
-              className="font-bold text-base md:text-lg transition-colors hover:text-gray duration-300"
+              className="font-bold text-base md:text-lg transition-colors duration-300 nav-item"
             >
               Portfolio
             </NavLink>
@@ -21,7 +21,7 @@ const Nav = () => {
           <li className="inline-block">
             <NavLink
               to="about"
-              className="font-bold text-base md:text-lg transition-colors hover:text-gray duration-300"
+              className="font-bold text-base md:text-lg transition-colors duration-300 nav-item"
             >
               About
             </NavLink>
@@ -29,7 +29,7 @@ const Nav = () => {
           <li className="inline-block">
             <NavLink
               to="contact"
-              className="font-bold text-base md:text-lg  transition-colors hover:text-gray duration-300"
+              className="font-bold text-base md:text-lg  transition-colors duration-300 nav-item"
             >
               Contact
             </NavLink>
