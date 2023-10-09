@@ -19,7 +19,6 @@ const ProjectDetails = () => {
   useEffect(() => {
     const displayPlaceholder = setTimeout(() => {
       setLoaded(true);
-      console.log('Log after 5 seconds');
     }, 1000);
     return () => {
       clearTimeout(displayPlaceholder);
