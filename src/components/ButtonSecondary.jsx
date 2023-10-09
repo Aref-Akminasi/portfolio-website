@@ -6,6 +6,7 @@ const ButtonSecondary = (props) => {
     <Link
       className=" border-black border-2 flex items-center space-x-3 px-3 py-2 rounded-md button-secondary group"
       to={props.to}
+      target={props.target ? props.target : '_self'}
     >
       <span className={fontSize}>{props.children}</span>
       <svg

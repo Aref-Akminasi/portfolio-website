@@ -15,10 +15,10 @@ const ProjectDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const project = FetchData(
+  const data = FetchData(
     `*[_type == "projects" && slug.current == '${slug}']{title,header,slug,tags,image {asset->{url}},liveDemoLink,githubLink,steps[]{title,text,img{asset->{url}}}}`
   );
-  console.log(project);
+  let project = data?.[0];
 
   return project ? (
     <>
@@ -33,11 +33,21 @@ const ProjectDetails = () => {
               {project.header}
             </h2>
             <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8">
-              <ButtonSecondary size="text-sm" to={project.githubLink}>
-                View project on GitHub
-              </ButtonSecondary>
-              <ButtonPrimary size="text-sm" to={project.liveDemoLink}>
-                View live website
+              {project.githubLink && (
+                <ButtonSecondary
+                  size="text-sm"
+                  to={project.githubLink}
+                  target="_blank"
+                >
+                  View project on GitHub
+                </ButtonSecondary>
+              )}
+              <ButtonPrimary
+                size="text-sm"
+                to={project.liveDemoLink}
+                target="_blank"
+              >
+                View project demo
               </ButtonPrimary>
             </div>
           </div>
@@ -50,7 +60,7 @@ const ProjectDetails = () => {
         </Container>
       </section>
 
-      <section className="p-16 bg-lightGray mt-40 flex flex-col space-y-16">
+      <section className="p-8 lg:p-16 bg-lightGray mt-40 flex flex-col space-y-16">
         {project.steps.map((step) => {
           return (
             <Step

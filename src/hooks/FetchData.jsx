@@ -12,7 +12,7 @@ const FetchData = (url) => {
 
         if (isMounted) {
           // only update state if component is still mounted
-          setData(data[0]);
+          setData(data);
         }
       } catch (error) {
         console.error('Error fetching data:', error);

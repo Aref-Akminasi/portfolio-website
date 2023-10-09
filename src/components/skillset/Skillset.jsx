@@ -1,35 +1,11 @@
 import Container from '../Container';
-import client from '../../hooks/SanityClient';
-import { useState, useEffect } from 'react';
 import SkillItem from './SkillItem';
+import FetchData from '../../hooks/FetchData';
 
 const Skillset = () => {
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    let isMounted = true; // flag to check if component is still mounted
-
-    const fetchData = async () => {
-      try {
-        const data = await client.fetch(
-          '*[_type == "skillset"]{ skills[]{ _key, title, "imageUrl": img.asset->url } }'
-        );
-
-        if (isMounted) {
-          // only update state if component is still mounted
-          setSkills(data[0].skills);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-
-    return () => {
-      isMounted = false; // component will unmount, set flag to false
-    };
-  }, []);
+  const data = FetchData(
+    '*[_type == "skillset"]{ skills[]{ _key, title, "imageUrl": img.asset->url } }'
+  );
 
   return (
     <section className="bg-lightGray mt-40">
@@ -38,8 +14,8 @@ const Skillset = () => {
           My current skillset, more to acquire!
         </h2>
         <div className="flex w-full justify-between flex-wrap items-stretch flex-col lg:flex-row space-y-4 lg:space-y-0">
-          {skills.length > 0 &&
-            skills.map((skill) => (
+          {data &&
+            data[0].skills.map((skill) => (
               <SkillItem
                 key={skill._key}
                 title={skill.title}
