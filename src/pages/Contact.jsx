@@ -3,7 +3,7 @@ import Container from '../components/Container';
 const Contact = () => {
   return (
     <section>
-      <Cotnainer></Cotnainer>
+      <Container></Container>
     </section>
   );
 };

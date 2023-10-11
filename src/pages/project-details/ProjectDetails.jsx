@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import FetchData from '../../hooks/FetchData';
+import useFetchData from '../../hooks/fetch-data';
 import Container from '../../components/Container';
 import NavBack from './NavBack';
 import Tag from '../../components/project-card/Tag';
@@ -25,7 +25,7 @@ const ProjectDetails = () => {
     };
   });
 
-  const data = FetchData(
+  const data = useFetchData(
     `*[_type == "projects" && slug.current == '${slug}']{title,header,slug,tags,image {asset->{url}},liveDemoLink,githubLink,steps[]{title,text,img{asset->{url}}}}`
   );
   let project = data?.[0];

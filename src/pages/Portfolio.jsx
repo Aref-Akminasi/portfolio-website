@@ -1,7 +1,7 @@
 import PortfolioHeader from '../components/headers/PortfolioHeader';
 import { useEffect } from 'react';
 import Container from '../components/Container';
-import FetchData from '../hooks/FetchData';
+import useFetchData from '../hooks/fetch-data';
 import ProjectCard from '../components/project-card/ProjectCard';
 import ProjectsContainer from '../components/ProjectsContainer';
 
@@ -10,7 +10,7 @@ const Portfolio = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const projects = FetchData(
+  const projects = useFetchData(
     '*[_type == "projects"]{ title, header, tags, slug, image { asset->{ url } }, liveDemoLink, githubLink, steps[]{ title, text, img{ asset->{ url } } } }'
   );
 

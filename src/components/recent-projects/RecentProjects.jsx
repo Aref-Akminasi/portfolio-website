@@ -3,10 +3,10 @@ import SectionTitle from '../section-title/SectionTitle';
 import ProjectCard from '../project-card/ProjectCard';
 import ButtonPrimary from '../ButtonPrimary';
 import ProjectsContainer from '../ProjectsContainer';
-import FetchData from '../../hooks/FetchData';
+import useFetchData from '../../hooks/fetch-data';
 
 const RecentProjects = () => {
-  const projects = FetchData(
+  const projects = useFetchData(
     '*[_type == "projects"]{ title, header, tags, slug, image { asset->{ url } }, liveDemoLink, githubLink, steps[]{ title, text, img{ asset->{ url } } } }'
   );
 

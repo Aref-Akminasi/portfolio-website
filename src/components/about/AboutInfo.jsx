@@ -1,9 +1,9 @@
 import AboutCard from './AboutCard';
 import Container from '../Container';
-import FetchData from '../../hooks/FetchData';
+import useFetchData from '../../hooks/fetch-data';
 
 const AboutInfo = () => {
-  const data = FetchData(
+  const data = useFetchData(
     '*[_type == "about"]{languages, experience, education}'
   );
   const info = data?.[0];

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import client from './SanityClient';
 
-const FetchData = (url) => {
+const useFetchData = (url) => {
   const [data, setData] = useState();
   useEffect(() => {
     let isMounted = true; // flag to check if component is still mounted
@@ -29,4 +29,4 @@ const FetchData = (url) => {
   return data;
 };
 
-export default FetchData;
+export default useFetchData;

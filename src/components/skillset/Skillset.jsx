@@ -1,9 +1,9 @@
 import Container from '../Container';
 import SkillItem from './SkillItem';
-import FetchData from '../../hooks/FetchData';
+import useFetchData from '../../hooks/fetch-data';
 
 const Skillset = () => {
-  const data = FetchData(
+  const data = useFetchData(
     '*[_type == "skillset"]{ skills[]{ _key, title, "imageUrl": img.asset->url } }'
   );
 
