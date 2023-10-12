@@ -13,7 +13,10 @@ const ProjectCard = ({ data }) => {
               return <Tag key={tag}>{tag}</Tag>;
             })}
           </div>
-          <Link className="font-bold text-2xl md:text-3xl" to="/">
+          <Link
+            className="font-bold text-2xl md:text-3xl"
+            to={'/project/' + data.slug.current}
+          >
             {data.title}
           </Link>
           <p className="text-sm md:text-base">{data.header}</p>
