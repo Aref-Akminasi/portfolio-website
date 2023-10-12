@@ -1,21 +1,30 @@
 import { useState } from 'react';
 
-const useInput = () => {
+const useInput = (regex) => {
   const [value, setValue] = useState('');
   const [valueIsValid, setValueIsValid] = useState(false);
-  const [usernameIsTouched, setUsernameIsTouched] = useState(false);
+  const [fieldIsTouched, setFieldIsTouched] = useState(false);
 
-  const changeUsernameHandler = (e) => {
-    setUsernameIsTouched(true);
-    if (e.target.value) {
-      setUsernameIsValid(true);
-    } else {
-      setUsernameIsValid(false);
-    }
-    setUsername(e.target.value);
+  const onChangeHandler = (e) => {
+    setValue(e.target.value);
   };
 
-  return [];
+  const onBlurHandler = () => {
+    setFieldIsTouched(true);
+    if (regex.test(value)) {
+      setValueIsValid(true);
+    } else {
+      setValueIsValid(false);
+    }
+  };
+
+  return {
+    value,
+    valueIsValid,
+    fieldIsTouched,
+    onChangeHandler,
+    onBlurHandler,
+  };
 };
 
 export default useInput;
