@@ -93,3 +93,7 @@
 .button-secondary:hover .secondary-svg path {
   fill: #ffffff;
 }
+
+textarea {
+  resize: none;
+}
