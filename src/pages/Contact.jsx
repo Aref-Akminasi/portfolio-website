@@ -2,8 +2,12 @@ import Container from '../components/Container';
 import NavGroup from '../components/NavGroup';
 import aref from '../assets/aref.png';
 import ContactForm from '../components/contact-form/ContactForm';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="bg-lightGray py-16">

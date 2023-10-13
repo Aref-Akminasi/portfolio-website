@@ -10,7 +10,10 @@ const useInput = (regex) => {
   };
 
   const onBlurHandler = () => {
-    setFieldIsTouched(true);
+    if (!fieldIsTouched) {
+      setFieldIsTouched(true);
+    }
+
     if (regex.test(value)) {
       setValueIsValid(true);
     } else {
@@ -18,10 +21,17 @@ const useInput = (regex) => {
     }
   };
 
+  const resetField = () => {
+    setFieldIsTouched(false);
+    setValueIsValid(false);
+    setValue('');
+  };
+
   return {
     value,
     valueIsValid,
     fieldIsTouched,
+    resetField,
     onChangeHandler,
     onBlurHandler,
   };

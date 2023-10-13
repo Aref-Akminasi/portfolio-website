@@ -1,15 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useInput from '../../hooks/use-input';
 
 const ContactForm = () => {
-  const [formIsValid, setFormIsValid] = useState(false);
+  const [responseIsOk, setResponseIsOk] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true; // flag to check if component is still mounted
+
+    setTimeout(() => {
+      if (isMounted) {
+        setResponseIsOk(false);
+      }
+    }, 3000);
+
+    return () => {
+      isMounted = false; // component will unmount, set flag to false
+    };
+  }, [responseIsOk]);
+
   const {
     value: usernameValue,
     valueIsValid: usernameIsValid,
     fieldIsTouched: usernameIsTouched,
     onChangeHandler: usernameChangeHandler,
     onBlurHandler: usernameBlurHandler,
+    resetField: resetUsername,
   } = useInput(/^[a-zA-Z_ ]{3,25}$/);
 
   const {
@@ -18,6 +34,7 @@ const ContactForm = () => {
     fieldIsTouched: phoneNumberIsTouched,
     onChangeHandler: phoneNumberChangeHandler,
     onBlurHandler: phoneNumberBlurHandler,
+    resetField: resetPhoneNumber,
   } = useInput(/^[0-9]{10}$/);
 
   const {
@@ -26,6 +43,7 @@ const ContactForm = () => {
     fieldIsTouched: emailIsTouched,
     onChangeHandler: emailChangeHandler,
     onBlurHandler: emailBlurHandler,
+    resetField: resetEmail,
   } = useInput(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
   const {
@@ -34,6 +52,7 @@ const ContactForm = () => {
     fieldIsTouched: messageIsTouched,
     onChangeHandler: messageChangeHandler,
     onBlurHandler: messageBlurHandler,
+    resetField: resetMessage,
   } = useInput(/^.{1,}$/);
 
   const submitHandler = (e) => {
@@ -44,11 +63,39 @@ const ContactForm = () => {
       emailIsValid &&
       messageIsValid
     ) {
-      setFormIsValid(true);
-      console.log(usernameValue, phoneNumberValue, emailValue, messageValue);
+      addFormDataHandler();
     } else {
-      setFormIsValid(false);
     }
+  };
+
+  const addFormDataHandler = async () => {
+    const response = await fetch(
+      'https://portfolio-website-aref-default-rtdb.europe-west1.firebasedatabase.app/form-submits.json',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          name: usernameValue,
+          phoneNumber: phoneNumberValue,
+          email: emailValue,
+          message: messageValue,
+        }),
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    const responseStatus = await response.ok;
+    console.log('response-status:', responseStatus);
+    setResponseIsOk(responseStatus);
+    resetForm();
+  };
+
+  const resetForm = () => {
+    resetUsername();
+    resetPhoneNumber();
+    resetEmail();
+    resetMessage();
   };
 
   const inputValidClasses =
@@ -141,7 +188,9 @@ const ContactForm = () => {
       >
         Submit
       </button>
-      {formIsValid && <span className="text-green">Form is sent!</span>}
+      {responseIsOk && (
+        <span className="text-green">Submission confirmed - thank you!</span>
+      )}
     </form>
   );
 };
