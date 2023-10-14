@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 
 import useInput from '../../hooks/use-input';
 
+const unsernameRegex = /^[A-Za-z_\s\u00C0-\u017F]{3,25}$/;
+const phoneNumberRegex = /^[0-9]{10}$/;
+const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const messageRegex = /^.{1,}$/;
+
 const ContactForm = () => {
   const [responseIsOk, setResponseIsOk] = useState(false);
 
@@ -26,7 +31,7 @@ const ContactForm = () => {
     onChangeHandler: usernameChangeHandler,
     onBlurHandler: usernameBlurHandler,
     resetField: resetUsername,
-  } = useInput(/^[a-zA-Z_ ]{3,25}$/);
+  } = useInput(unsernameRegex);
 
   const {
     value: phoneNumberValue,
@@ -35,7 +40,7 @@ const ContactForm = () => {
     onChangeHandler: phoneNumberChangeHandler,
     onBlurHandler: phoneNumberBlurHandler,
     resetField: resetPhoneNumber,
-  } = useInput(/^[0-9]{10}$/);
+  } = useInput(phoneNumberRegex);
 
   const {
     value: emailValue,
@@ -44,7 +49,7 @@ const ContactForm = () => {
     onChangeHandler: emailChangeHandler,
     onBlurHandler: emailBlurHandler,
     resetField: resetEmail,
-  } = useInput(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+  } = useInput(emailRegex);
 
   const {
     value: messageValue,
@@ -53,7 +58,7 @@ const ContactForm = () => {
     onChangeHandler: messageChangeHandler,
     onBlurHandler: messageBlurHandler,
     resetField: resetMessage,
-  } = useInput(/^.{1,}$/);
+  } = useInput(messageRegex);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -99,14 +104,14 @@ const ContactForm = () => {
   };
 
   const inputValidClasses =
-    'w-64 h-12 outline-none px-4 md:w-96 border border-black';
+    'w-full h-12 outline-none px-4 md:w-96 border border-black';
   const inputInvalidClasses =
-    'w-64 h-12 outline-none px-4 md:w-96 border border-error focus:border-black';
+    'w-full h-12 outline-none px-4 md:w-96 border border-error focus:border-black';
 
   const textAreaValidClasses =
-    'w-64 h-24 outline-none p-4 md:w-96 border border-black';
+    'w-full h-24 outline-none p-4 md:w-96 border border-black';
   const textAreaInValidClasses =
-    'w-64 h-24 outline-none p-4 md:w-96 border border-error focus:border-black';
+    'w-full h-24 outline-none p-4 md:w-96 border border-error focus:border-black';
 
   return (
     <form className="flex flex-col space-y-3" onSubmit={submitHandler}>
@@ -188,8 +193,10 @@ const ContactForm = () => {
       >
         Submit
       </button>
-      {responseIsOk && (
-        <span className="text-green">Submission confirmed - thank you!</span>
+      {responseIsOk ? (
+        <span className="text-green h-4">Form submitted</span>
+      ) : (
+        <span className="h-4"></span>
       )}
     </form>
   );

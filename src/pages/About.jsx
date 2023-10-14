@@ -6,7 +6,7 @@ import Skillset from '../components/skillset/Skillset';
 const About = () => {
   return (
     <>
-      <section className="bg-lightGray py-16">
+      <header className="bg-lightGray py-16">
         <Container className="flex flex-col lg:flex-row px-16 items-center space-x-0 lg:space-x-32 space-y-16 lg:space-y-0">
           <div className="flex flex-col space-y-6 max-w-3xl">
             <h1 className="font-semibold text-3xl md:text-4xl">
@@ -25,7 +25,7 @@ const About = () => {
             View&nbsp;CV
           </ButtonPrimary>
         </Container>
-      </section>
+      </header>
 
       <section>
         <AboutInfo />

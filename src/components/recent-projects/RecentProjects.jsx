@@ -6,10 +6,11 @@ import ProjectsContainer from '../ProjectsContainer';
 import useFetchData from '../../hooks/fetch-data';
 
 const RecentProjects = () => {
-  const projects = useFetchData(
-    '*[_type == "projects"]{ title, header, tags, slug, image { asset->{ url } }, liveDemoLink, githubLink, steps[]{ title, text, img{ asset->{ url } } } }'
+  const data = useFetchData(
+    '*[_type == "portfolio"]{ projects[]->{ title, header, tags, slug, image { asset->{ url } }, liveDemoLink, githubLink, steps[]{ title, text, img{ asset->{ url } } } } | order(projects[].order asc) }'
   );
 
+  let projects = data?.[0].projects;
   return (
     <section>
       <Container className="mt-40 flex flex-col space-y-16 p-8">

@@ -10,7 +10,7 @@ const Contact = () => {
   }, []);
   return (
     <>
-      <section className="bg-lightGray py-16">
+      <header className="bg-lightGray py-16">
         <Container className="flex flex-col px-16 space-y-6">
           <div className="flex flex-col space-y-6 max-w-3xl">
             <h1 className="font-semibold text-3xl md:text-4xl">Say Hello!</h1>
@@ -30,11 +30,11 @@ const Contact = () => {
             </li>
           </NavGroup>
         </Container>
-      </section>
+      </header>
 
       <section className="bg-lightGray mt-40">
-        <Container className="flex flex-col lg:flex-row justify-between px-4 md:px-16 pt-16 items-center space-y-32 md:space-y-0">
-          <div className="flex flex-col space-y-8 max-w-lg">
+        <Container className="flex flex-col lg:flex-row justify-between px-4 md:px-16 pt-16 lg:pt-0 items-center space-y-32 md:space-y-0">
+          <div className="flex flex-col space-y-8 max-w-lg w-full md:w-auto">
             <h2 className="font-light text-gray text-3xl">Let's Connect!</h2>
             <ContactForm />
           </div>

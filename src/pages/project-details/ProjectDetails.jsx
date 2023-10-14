@@ -32,7 +32,7 @@ const ProjectDetails = () => {
 
   return project && loaded ? (
     <>
-      <section className="bg-lightGray p-8 md:p-16">
+      <header className="bg-lightGray p-8 md:p-16">
         <Container className="px-4 md:px-16 flex flex-col md:flex-row space-y-16 md:space-y-0 items-start md:items-center space-x-0 md:space-x-32">
           <div className="max-w-3xl flex flex-col items-start space-y-6">
             <NavBack to="/portfolio">Portfolio</NavBack>
@@ -68,7 +68,7 @@ const ProjectDetails = () => {
             })}
           </div>
         </Container>
-      </section>
+      </header>
 
       <section className="p-8 lg:p-16 bg-lightGray mt-40 flex flex-col space-y-16">
         {project.steps.map((step) => {
