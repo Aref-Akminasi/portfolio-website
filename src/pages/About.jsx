@@ -2,8 +2,11 @@ import ButtonPrimary from '../components/ButtonPrimary';
 import Container from '../components/Container';
 import AboutInfo from '../components/about/AboutInfo';
 import Skillset from '../components/skillset/Skillset';
-
+import { useEffect } from 'react';
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <header className="bg-lightGray py-16">

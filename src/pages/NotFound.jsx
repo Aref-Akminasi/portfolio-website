@@ -1,7 +1,11 @@
 import Container from '../components/Container';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const NotFound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container className="flex flex-col space-y-8 md:space-y-32 p-16">
       <h1 className="text-2xl md:text-4xl font-bold">404 - Page not found</h1>
