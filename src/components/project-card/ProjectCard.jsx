@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ProjectCard = ({ data }) => {
   return (
     <div className="max-w-sm flex flex-col space-y-4">
-      <img className="" src={data.image.asset.url} />
+      <img className="" src={data.image.asset.url} alt={data.title} />
       <div className="flex flex-col space-y-4 h-full justify-between">
         <div className="flex flex-col space-y-4 items-start">
           <div className="flex flex-wrap content-start">

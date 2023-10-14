@@ -9,7 +9,11 @@ const Step = (props) => {
         <BlockContent blocks={props.text} />
       </div>
       <div>
-        <img src={props.imgUrl} className="w-auto lg:max-w-sm"></img>
+        <img
+          src={props.imgUrl}
+          className="w-auto lg:max-w-sm"
+          alt={props.title}
+        ></img>
       </div>
     </Container>
   );

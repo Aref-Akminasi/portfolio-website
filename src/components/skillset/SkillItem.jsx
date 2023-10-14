@@ -9,7 +9,7 @@ const SkillItem = (props) => {
         alt={props.title}
         className="skill h-20 cursor-wait"
       />
-      <h4 className="text-base text-gray">{props.title}</h4>
+      <span className="text-base text-gray">{props.title}</span>
     </div>
   );
 };

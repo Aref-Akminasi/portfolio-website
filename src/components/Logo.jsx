@@ -4,7 +4,7 @@ import logo from '../assets/logo.svg';
 const Logo = () => {
   return (
     <Link to="/">
-      <img src={logo} className="w-44" />
+      <img src={logo} className="w-44" alt="logo aref akminasi" />
     </Link>
   );
 };

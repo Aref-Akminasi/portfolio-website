@@ -8,17 +8,30 @@ const SocialMedia = () => {
     <div className="flex flex-row space-x-6 items-center">
       <a
         href="https://www.linkedin.com/in/aref-akminasi-91412b207/"
+        aria-label="linkedin"
         target="_blank"
       >
         <Linkedin />
       </a>
-      <a href="https://github.com/Aref-Akminasi" target="_blank">
+      <a
+        href="https://github.com/Aref-Akminasi"
+        target="_blank"
+        aria-label="github"
+      >
         <GitHub />
       </a>
-      <a href="https://www.instagram.com/aref_akminasi/" target="_blank">
+      <a
+        href="https://www.instagram.com/aref_akminasi/"
+        target="_blank"
+        aria-label="instagram"
+      >
         <Instagram />
       </a>
-      <a href="https://twitter.com/aref_akminasi" target="_blank">
+      <a
+        href="https://twitter.com/aref_akminasi"
+        target="_blank"
+        aria-label="twitter"
+      >
         <Twitter />
       </a>
     </div>
