@@ -158,12 +158,12 @@ const ContactForm = () => {
         type="email"
         id="email"
         name="email"
-        value={emailValue}
         className={
           !emailIsValid && emailIsTouched
             ? inputInvalidClasses
             : inputValidClasses
         }
+        value={emailValue}
         onChange={emailChangeHandler}
         onBlur={emailBlurHandler}
         required

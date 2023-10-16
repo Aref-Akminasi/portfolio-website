@@ -14,11 +14,13 @@ const useInput = (regex) => {
       setFieldIsTouched(true);
     }
 
-    if (regex.test(value)) {
+    if (regex.test(value.trim())) {
       setValueIsValid(true);
     } else {
       setValueIsValid(false);
     }
+
+    setValue((prevValue) => prevValue.trim());
   };
 
   const resetField = () => {
