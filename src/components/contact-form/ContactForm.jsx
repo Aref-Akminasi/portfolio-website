@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import useInput from '../../hooks/use-input';
 
-const unsernameRegex = /^[A-Za-z_\s\u00C0-\u017F]{3,25}$/;
+const usernameRegex = /^[A-Za-z_\s\u00C0-\u017F]{3,25}$/;
 const phoneNumberRegex = /^[0-9]{10}$/;
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const messageRegex = /^.{1,}$/;
@@ -15,7 +15,7 @@ const ContactForm = () => {
     let isMounted = true; // flag to check if component is still mounted
 
     setTimeout(() => {
-      if (isMounted && responseIsOk && formSubmitted) {
+      if (isMounted && formSubmitted) {
         setFormSubmitted(false);
         setResponseIsOk(false);
       }
@@ -24,7 +24,7 @@ const ContactForm = () => {
     return () => {
       isMounted = false; // component will unmount, set flag to false
     };
-  }, [responseIsOk]);
+  }, [formSubmitted]);
 
   const {
     value: usernameValue,
@@ -33,7 +33,7 @@ const ContactForm = () => {
     onChangeHandler: usernameChangeHandler,
     onBlurHandler: usernameBlurHandler,
     resetField: resetUsername,
-  } = useInput(unsernameRegex);
+  } = useInput(usernameRegex);
 
   const {
     value: phoneNumberValue,
@@ -76,28 +76,37 @@ const ContactForm = () => {
   };
 
   const addFormDataHandler = async () => {
-    const response = await fetch(
-      'https://portfolio-website-aref-default-rtdb.europe-west1.firebasedatabase.app/form-submits.json',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          name: usernameValue,
-          phoneNumber: phoneNumberValue,
-          email: emailValue,
-          message: messageValue,
-        }),
+    let responseStatus = false; // default value
 
-        headers: {
-          'Content-Type': 'application/json',
-        },
+    try {
+      const response = await fetch(
+        'https://portfolio-website-aref-default-rtdb.europe-west1.firebasedatabase.app/form-submits.json',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            name: usernameValue,
+            phoneNumber: phoneNumberValue,
+            email: emailValue,
+            message: messageValue,
+          }),
+
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      responseStatus = response.ok;
+      if (!responseStatus) {
+        throw new Error('Server has rejected the request');
       }
-    );
-    const responseStatus = await response.ok;
+    } catch (error) {
+      console.error(error);
+    }
+
     console.log('response-status:', responseStatus);
-    setTimeout(() => {
-      setResponseIsOk(responseStatus);
-      setFormSubmitted(true);
-    }, 1000);
+    setResponseIsOk(responseStatus);
+    setFormSubmitted(true);
     resetForm();
   };
 
