@@ -200,7 +200,7 @@ const ContactForm = () => {
       </button>
       {formSubmitted ? (
         responseIsOk ? (
-          <span className="text-green h-4">Form submitted</span>
+          <span className="text-green h-4">Form submitted successfully!</span>
         ) : (
           <span className="text-error h-4">
             Server error, please try again later
