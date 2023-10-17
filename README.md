@@ -23,7 +23,7 @@ Users should be able to:
 
 - Read information about me.
 - View my projects details.
-- View demos of the project.
+- View demos of the projects.
 
 ### Screenshots
 
@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://arefakminasi.com)
+- Live Site URL: [Firebase](https://arefakminasi.com)
 
 ## My process
 
