@@ -33,12 +33,12 @@ const Contact = () => {
       </header>
 
       <section className="bg-lightGray mt-40">
-        <Container className="flex flex-col lg:flex-row justify-between px-4 md:px-16 pt-16 lg:pt-0 items-center space-y-32 md:space-y-0">
+        <Container className="flex flex-col lg:flex-row justify-between px-8 md:px-16 pt-16 lg:pt-0 items-center space-y-32 md:space-y-0">
           <div className="flex flex-col space-y-8 max-w-lg w-full md:w-auto">
             <h2 className="font-light text-gray text-3xl">Let's Connect!</h2>
             <ContactForm />
           </div>
-          <div className="h-fit md:h-165 flex items-end">
+          <div className="h-fit md:h-165 flex items-end px-8 md:px-0">
             <img src={aref} alt="aref" className="w-full md:max-w-md" />
           </div>
         </Container>

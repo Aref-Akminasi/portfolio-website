@@ -9,12 +9,14 @@ const messageRegex = /^.{1,}$/;
 
 const ContactForm = () => {
   const [responseIsOk, setResponseIsOk] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     let isMounted = true; // flag to check if component is still mounted
 
     setTimeout(() => {
-      if (isMounted) {
+      if (isMounted && responseIsOk && formSubmitted) {
+        setFormSubmitted(false);
         setResponseIsOk(false);
       }
     }, 3000);
@@ -92,7 +94,10 @@ const ContactForm = () => {
     );
     const responseStatus = await response.ok;
     console.log('response-status:', responseStatus);
-    setResponseIsOk(responseStatus);
+    setTimeout(() => {
+      setResponseIsOk(responseStatus);
+      setFormSubmitted(true);
+    }, 500);
     resetForm();
   };
 
@@ -193,8 +198,14 @@ const ContactForm = () => {
       >
         Submit
       </button>
-      {responseIsOk ? (
-        <span className="text-green h-4">Form submitted</span>
+      {formSubmitted ? (
+        responseIsOk ? (
+          <span className="text-green h-4">Form submitted</span>
+        ) : (
+          <span className="text-error h-4">
+            Server error, please try again later
+          </span>
+        )
       ) : (
         <span className="h-4"></span>
       )}
