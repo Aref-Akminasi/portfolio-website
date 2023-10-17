@@ -97,7 +97,7 @@ const ContactForm = () => {
     setTimeout(() => {
       setResponseIsOk(responseStatus);
       setFormSubmitted(true);
-    }, 500);
+    }, 1000);
     resetForm();
   };
 
