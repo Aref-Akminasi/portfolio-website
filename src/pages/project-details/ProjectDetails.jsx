@@ -42,7 +42,7 @@ const ProjectDetails = () => {
             <h2 className="font-light text-base md:text-xl text-gray">
               {project.header}
             </h2>
-            <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8">
+            <div className="flex flex-col items-start lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8">
               {project.githubLink && (
                 <ButtonSecondary
                   size="text-sm"
