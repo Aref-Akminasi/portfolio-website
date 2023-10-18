@@ -13,17 +13,17 @@ const Footer = () => {
         {/* Nav Menu */}
         <NavGroup title="Menu">
           <li>
-            <Link to="portfolio" className="text-base md:text-base">
+            <Link to="portfolio" className="text-sm">
               Portfolio
             </Link>
           </li>
           <li>
-            <Link to="about" className="text-base md:text-base">
+            <Link to="about" className="text-sm">
               About
             </Link>
           </li>
           <li>
-            <Link to="contact" className="text-base md:text-base">
+            <Link to="contact" className="text-sm">
               Contact
             </Link>
           </li>
@@ -31,11 +31,11 @@ const Footer = () => {
 
         {/* Contacts */}
         <NavGroup title="Contacts">
-          <li className="flex space-x-3 items-center">
+          <li className="flex space-x-3 items-center text-sm">
             <i className="fa-solid fa-envelope"></i>
             <a href="mailto:akminasiaref@gmail.com">akminasiaref@gmail.com</a>
           </li>
-          <li className="flex space-x-3 items-center">
+          <li className="flex space-x-3 items-center text-sm">
             <i className="fa-solid fa-phone text-base"></i>
             <span>+31 618832668</span>
           </li>
