@@ -23,7 +23,7 @@ const About = () => {
           </div>
           <ButtonPrimary
             target="_blank"
-            to="https://drive.google.com/file/d/1dtl38VAcW8fFCq8BZaD2X8JZas1W99bv/view?usp=sharing"
+            to="https://drive.google.com/file/d/15IfID2lmb-qE7tIH_XzHWcUxbLX1U_Oi/view?usp=sharing"
           >
             View&nbsp;CV
           </ButtonPrimary>

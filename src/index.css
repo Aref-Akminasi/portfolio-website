@@ -40,10 +40,10 @@
 .placeholder {
   background-image: linear-gradient(
     to right,
-    #d0d1d3 0%,
-    #c6c7c9 10%,
-    #d0d1d3 20%,
-    #d0d1d3 100%
+    #d8d9db 0%,
+    #ced0d2 10%,
+    #d8d9db 20%,
+    #d8d9db 100%
   );
   background-size: 200% 100%;
   animation: bgPos 1s linear infinite;

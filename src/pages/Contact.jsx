@@ -22,7 +22,7 @@ const Contact = () => {
           <NavGroup>
             <li className="flex space-x-3 items-center">
               <i className="fa-solid fa-envelope"></i>
-              <a href="mailto:akminasiaref@gmail.com">akminasiaref@gmail.com</a>
+              <a href="mailto:arefakminasi@gmail.com">arefakminasi@gmail.com</a>
             </li>
             <li className="flex space-x-3 items-center">
               <i className="fa-solid fa-phone text-base"></i>
