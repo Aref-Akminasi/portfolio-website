@@ -25,7 +25,7 @@ const ProjectDetails = () => {
     };
   });
 
-  const data = useFetchData(
+  const { data } = useFetchData(
     `*[_type == "projects" && slug.current == '${slug}']{title,header,slug,tags,image {asset->{url}},liveDemoLink,githubLink,steps[]{title,text,img{asset->{url}}}}`
   );
   let project = data?.[0];

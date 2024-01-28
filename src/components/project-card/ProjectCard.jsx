@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const ProjectCard = ({ data }) => {
   return (
-    <div className="max-w-sm flex flex-col space-y-4">
+    <div className="max-w-sm flex flex-col">
       <Link to={'/project/' + data.slug.current}>
         <img src={data.image.asset.url} alt={data.title} />
       </Link>
-      <div className="flex flex-col space-y-4 h-full justify-between">
+      <div className="flex flex-col space-y-4 h-full justify-between shadow-lg p-4 rounded-b-md">
         <div className="flex flex-col space-y-4 items-start">
           <div className="flex flex-wrap content-start">
             {data.tags.map((tag) => {
