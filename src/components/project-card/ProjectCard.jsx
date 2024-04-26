@@ -8,7 +8,7 @@ const ProjectCard = ({ data }) => {
       <Link to={"/project/" + data.slug.current}>
         <img src={data.image.asset.url} alt={data.title} />
       </Link>
-      <div className="flex flex-col space-y-4 h-full justify-between  p-4 rounded-b-md">
+      <div className="flex flex-col space-y-4 h-full justify-between  p-4">
         <div className="flex flex-col space-y-4 items-start">
           <div className="flex flex-wrap content-start">
             {data.tags.map((tag) => {
