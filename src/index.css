@@ -15,7 +15,7 @@
 }
 
 .nav-item::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 0%;
   background-color: #000;
@@ -27,8 +27,7 @@
 
 .social-media-icon,
 .skill {
-  cursor: pointer;
-  transition: filter 300ms;
+  transition: filter 200ms;
   filter: grayscale(100%);
 }
 
