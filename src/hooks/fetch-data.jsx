@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import client from "./SanityClient";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import client from './SanityClient';
+import { useNavigate } from 'react-router-dom';
 
 const useFetchData = (url) => {
   const [data, setData] = useState();
@@ -15,11 +15,11 @@ const useFetchData = (url) => {
           // only update state if component is still mounted
           setData(data);
         } else {
-          throw new Error("Data could not be fetched");
+          throw new Error('Data could not be fetched');
         }
       } catch (error) {
         console.error(error);
-        navigate("/not-found");
+        navigate('/not-found');
       }
     };
 
@@ -28,7 +28,7 @@ const useFetchData = (url) => {
     return () => {
       isMounted = false; // component will unmount, set flag to false
     };
-  }, []);
+  }, [url]);
 
   return data;
 };
