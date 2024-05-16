@@ -96,3 +96,7 @@
 textarea {
   resize: none;
 }
+
+.odd-skill-set div:last-child {
+  grid-column: span 2;
+}
