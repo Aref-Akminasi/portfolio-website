@@ -7,7 +7,6 @@ import Tag from '../../components/project-card/Tag';
 import ButtonPrimary from '../../components/ButtonPrimary';
 import ButtonSecondary from '../../components/ButtonSecondary';
 import Step from './Step';
-import { redirect } from 'react-router-dom';
 
 const ProjectDetails = () => {
   const { slug } = useParams();

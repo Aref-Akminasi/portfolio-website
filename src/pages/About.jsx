@@ -1,4 +1,4 @@
-import ButtonPrimary from '../components/ButtonPrimary';
+import ExternalLink from '../components/ExternalLink';
 import Container from '../components/Container';
 import CvItem from '../components/cv/CvItem';
 import CvSection from '../components/cv/CvSection';
@@ -27,12 +27,12 @@ const About = () => {
               development and design expertise
             </h2>
           </div>
-          <ButtonPrimary
-            target="_blank"
-            to="https://drive.google.com/file/d/1K_3gUEUn5A68jndEPwwoIO6JZFdYDEcJ/view?usp=sharing"
+          <ExternalLink
+             target="_blank"
+            to="https://drive.google.com/file/d/101m4nmXzueLoPZjzrWdAHPrGFM1pPmKa/view?usp=sharing"
           >
             View&nbsp;CV
-          </ButtonPrimary>
+          </ExternalLink>
         </Container>
       </header>
       {info && (
